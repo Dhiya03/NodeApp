@@ -5,12 +5,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/version', (req, res) => {
-    
+    console.log(req.queryResult.queryText);
     res.status(200).send(req.queryResult.queryText);
 });
 
 app.get('/', (req, res) => {
-    res.status(200).send("Hello from APIAI Webhook Integration.");
+    res.status(200).send("Hello from APIAI Webhook Integration1.");
 });
 
 /* Handling all messenges */
