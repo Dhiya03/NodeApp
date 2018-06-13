@@ -5,7 +5,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/version', (req, res) => {
-    res.status(200).send("APIAI Webhook Integration. Version 1.0");
+    
+    res.status(200).send(req.queryResult.queryText);
 });
 
 app.get('/', (req, res) => {
