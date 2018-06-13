@@ -4,13 +4,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/version', (req, res) => {
-    console.log(req.queryResult.queryText);
-    res.status(200).send(req.queryResult.queryText);
+app.post('/version', (req, res) => {
+    console.log(req.body.queryResult.queryText);
+    
+    res.status(200).send(req.body.queryResult.queryText);
 });
 
 app.get('/', (req, res) => {
-    res.status(200).send("Hello from APIAI Webhook Integration1.");
+    res.status(200).send("Hello from APIAI Webhook Integration2.");
 });
 
 /* Handling all messenges */
