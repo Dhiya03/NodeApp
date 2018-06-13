@@ -20,7 +20,7 @@ app.post('/version', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.status(200).send("Hello from APIAI Webhook Integration2.");
+    res.status(200).send("Hello from APIAI Webhook Integration.");
 });
 
 /* Handling all messenges */
