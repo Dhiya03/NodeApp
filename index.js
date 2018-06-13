@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/version', (req, res) => {
     res.setHeader('Content-Type','application/json');
-    console.log(req.body.queryResult.queryText);
+    console.log(req.body);
     let responseObj={
         "fulfillmentText": req.body.queryResult.queryText,
 "fulfillmentMessages": [
