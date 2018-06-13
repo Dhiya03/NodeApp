@@ -5,9 +5,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/version', (req, res) => {
+    res.setHeader('Content-Type','application/json');
     console.log(req.body.queryResult.queryText);
-    
-    res.status(200).send(req.body.queryResult.queryText);
+    let responseObj={
+        "fulfillmentText": req.body.queryResult.queryText,
+"fulfillmentMessages": [
+  {"text":{"text":["hello"]}}
+],
+"source":""
+    }
+    console.log(responseObj);
+    //res.status(200).send(respon);
+   return res.json(responseObj);
 });
 
 app.get('/', (req, res) => {
